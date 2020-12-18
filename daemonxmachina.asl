@@ -1,5 +1,5 @@
 state("DXM-Win64-Shipping") {
-	int loading : "DXM-Win64-Shipping.exe", 0x045FD778, 0x18, 0x40, 0x34C, 0x20, 0x270, 0x228, 0xFA8; // 3 on loading screens 2 during gameplay
+	int loading : "DXM-Win64-Shipping.exe", 0x045FD778, 0x18, 0x40, 0x34C, 0x410, 0x4E0, 0x578, 0x1E8; // 3 on loading screens 2 during gameplay
 }
 
 isLoading {
