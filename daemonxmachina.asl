@@ -13,5 +13,5 @@ update {
 
 isLoading {
 	if (vars.loadingTimestamp == 0) return false;
-	return Environment.TickCount - vars.loadingTimestamp > 200;
+	return Environment.TickCount - vars.loadingTimestamp > 400;
 }
