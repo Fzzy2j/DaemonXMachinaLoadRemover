@@ -1,17 +1,8 @@
 state("DXM-Win64-Shipping") {
-	int loading : "DXM-Win64-Shipping.exe", 0x045FD778, 0x18, 0x40, 0x34C, 0x410, 0x4E0, 0x578, 0x1E8; // 3 on loading screens 2 during gameplay
-}
-
-init {
-	vars.loadingTimestamp = 0;
-}
-
-update {
-	if (current.loading != 3) vars.loadingTimestamp = 0;
-	else if (vars.loadingTimestamp == 0) vars.loadingTimestamp = Environment.TickCount;
+	int loading1 : "DXM-Win64-Shipping.exe", 0x0459A568, 0x180, 0x1B0, 0x20, 0x80, 0xAE8, 0x368, 0x8; // 3 on loading screens 2 during gameplay
+	int loading2 : "DXM-Win64-Shipping.exe", 0x04607E18, 0x0, 0x7D0; // 1065353216 during gameplay
 }
 
 isLoading {
-	if (vars.loadingTimestamp == 0) return false;
-	return Environment.TickCount - vars.loadingTimestamp > 400;
+	return current.loading2 != 1065353216 && current.loading1 != 2;
 }
